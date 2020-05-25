@@ -20,10 +20,6 @@ set novisualbell
 set showmatch
 " set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
-" set color scheme
-colorscheme desert
-" <3 black terminals
-set background=dark
 " disable mouse
 set mouse=
 set ttymouse=
@@ -37,6 +33,10 @@ set wildmenu
 set title
 " indentation
 set autoindent
+" set color scheme
+set background=dark
+"colorscheme solarized8 " install https://github.com/lifepillar/vim-solarized8 first
+colorscheme desert
 
 " enable programming languages support
 syntax enable
