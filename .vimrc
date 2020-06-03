@@ -35,10 +35,22 @@ set title
 set autoindent
 " set color scheme
 set background=dark
-"colorscheme solarized8 " install https://github.com/lifepillar/vim-solarized8 first
+
+" add ExtraWhitespace highlight in magenta color
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=magenta guibg=magenta
+
 colorscheme desert
+"colorscheme solarized8 " install https://github.com/lifepillar/vim-solarized8 first
+
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" save macro to remove trailing spaces
+let @t='%s/\s\+$//'
 
 " enable programming languages support
 syntax enable
 filetype indent plugin on
-
